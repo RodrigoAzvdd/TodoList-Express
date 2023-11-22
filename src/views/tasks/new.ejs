@@ -1,0 +1,23 @@
+<%- include('../layouts/header', {title: `${checklist.name}` }) %>
+
+<%- include('../layouts/menu') %>
+
+<section class="section">
+    <div class="container">
+        <h1 class="title size-4">Nova tarefa</h1>
+
+        <form method="post" action="/checklists/<%= checklist._id %>/tasks">
+            <div class="field">
+                <label class="label">Nome</label>
+                <div class="control">
+                    <input class="input" type="text" name="task[name]" placeholder="Tarefa">
+                </div>
+            </div>
+
+            <button type="submit" class="button is-success">Salvar</button>
+            <a href="/checklists/<%= checklist._id %>" class="button">Cancelar</a>
+        </form>
+    </div>
+</section>
+
+<%- include('../layouts/footer') %>
